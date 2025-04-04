@@ -6,15 +6,6 @@ import (
 
 func main() {
 
-	//mux := http.NewServeMux()
-
-	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-	// 	fmt.Fprint(w, "Hi Go!")
-	// })
-	// http.HandleFunc("/echo/", func(w http.ResponseWriter, r *http.Request) {
-	// 	fmt.Fprint(w, r.URL.Query().Get("message"))
-	// })
-	// http.ListenAndServe("localhost:8080", nil)
 	router := gin.Default()
 	router.POST("/employee")
 	router.GET(" /employee/:id")
