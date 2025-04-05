@@ -20,6 +20,8 @@ func NewHandler(storage Storage) *Handler {
 	return &Handler{storage: storage}
 }
 
+// Тип.Метод.Параметр
+// Метод
 func (h *Handler) CreateEmployee(c *gin.Context) {
 	var employee Employee
 
