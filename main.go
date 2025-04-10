@@ -18,9 +18,28 @@ func main() {
 	//по сути- маршрутизатор, тут- роутер
 	router := gin.Default()
 
+	//POST запрос по адресу localhost:8080/employee
+	//в теле запроса данные json о "сотруднике"
+	//{
+	// 	"name": "Pete",
+	// 	"age": 25,
+	// 	"salary": 2000,
+	// 	"sex": "M"
+	// }
 	router.POST("/employee", handlerLocal.CreateEmployee)
+	//в ответ получаем id
+	// {
+	// 	"id": 1
+	// }
+
+	//Теперь GET по тому же адресу, но с требуемым id,
+	//получаем информацию о сотруднике
 	router.GET("/employee/:id", handlerLocal.GetEmployee)
+
+	//PUT не понял как работает
 	router.PUT("/employee/:id", handlerLocal.UpdateEmployee)
+
+	//DELETE удаляет сотрудника с введенным id
 	router.DELETE("/employee/:id", handlerLocal.DeleteEmployee)
 
 	router.Run()
